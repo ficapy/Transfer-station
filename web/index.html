@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/favicon.ico">
+
+    <title>download youtube</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/pro-bars.min.css">
+    <!-- Custom styles for this template -->
+    <!-- <link href="//getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="//rawgithub.com/twbs/bootstrap/master/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--<script>AUTOBAHN_DEBUG = true;</script>-->
+    <script src="http://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"></script>
+</head>
+
+<body>
+
+
+<script type="text/html" id="tpllist">
+    <div id="result-title"><a href="<%=url%>"><h3><%=title%></h3></a></div>
+    <div id="result-items">
+        <ul>
+            <% for ( var i = 0; i < items.length; i++ ) { %>
+            <li><a href="javascript:void(0)" ,item="<%=i%>">
+                <%=items[i].format%> ,<%=items[i].ext%>
+            </a></li>
+            <% } %>
+        </ul>
+    </div>
+</script>
+
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">
+            <img style="vertical-align:"
+                 src="/static/img/icon-24x24.png">
+            DownTube
+        </h3>
+    </div>
+
+    <hr>
+
+    <div class="jumbotron">
+        <div class="text-center">
+            <h1>Download YouTube</h1>
+
+            <p class="lead">
+                Enter a video
+                <abbr class="initialism"
+                      title="yes a youtube link, eg. https://www.youtube.com/watch?v=U1uJVrsS_ZU">URL</abbr>
+                below
+            </p>
+        </div>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <div id="search-status" class="btn btn-default">
+                <i class="glyphicon glyphicon-cog"></i>
+                <span>Initializing...</span>
+            </div>
+          </span>
+            <input id="search-field" type="text" class="form-control" tabindex="1">
+          <span class="input-group-btn">
+            <div id="search-enter" class="btn btn-default">
+                <span>Enter</span>
+            </div>
+          </span>
+        </div>
+        <div id="search-results">
+        </div>
+        <div id="progressbar" class="pro-bar-container color-silver" style="display:none">
+            <div class="pro-bar bar-100 color-clouds animated" data-pro-bar-percent="100" style="width: 10%;">
+            </div>
+        </div>
+        <div id="additioninfo" style="display: none">
+            <p id="filesiza"></p>
+            <p id="speed"></p>
+            <p id="eta"></p>
+        </div>
+    </div>
+
+    <div class="row marketing text-center">
+        <div class="col-lg-6">
+            <h4>硬盘使用情况</h4>
+            <input type="text" id="df" style="text-align:center" disabled="">
+
+        </div>
+
+        <div class="col-lg-6">
+            <h4>内存使用情况</h4>
+            <input type="text" id="free" style="text-align:center" disabled="">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <p>&copy; Ficapy 2015</p>
+    </div>
+
+</div>
+<!-- /container -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/static/js/pro-bars.min.js"></script>
+<script src="/static/js/appear.min.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
